@@ -1,0 +1,32 @@
+/* Generics */
+	body, html {width: 100%; height: 100%; overflow: hidden;}
+	body {color: #282828; font-size: 15px; font-family: sans-serif;}
+	p, dl, hr, h1, h2, h3, h4, h5, h6, ol, ul, pre, table, address, fieldset, figure {margin: 10px 0;}
+	a		{color: inherit; font-weight: bold; text-decoration: none;}
+	a:hover	{text-decoration: underline;}
+	
+/* Layout */
+	nav			{position: fixed; top: 0; bottom: 0; left: 450px; right: 0; border-left: 5px solid #555555; background: #DDDDDD;}
+	#layer1,
+	#layer2,
+	#layer3		{position: absolute; top: 0; left: 0;}
+	/* Sidebar */
+		#sidebar		{}
+		article			{position: fixed; top: 5px; bottom: 31px; left: 5px; padding: 0 10px 0 5px; width: 425px; overflow-y: scroll; -moz-transition: all 0.5s; -webkit-transition: all 0.5s; -o-transition: all 0.5s; transition: all 0.5s;}
+		#settings		{position: fixed; bottom: 5px; left: 5px; width: 440px; height: 20px; border-top: 1px solid #999999; overflow: hidden; background: #FFFFFF; -moz-transition: all 0.5s; -webkit-transition: all 0.5s; -o-transition: all 0.5s; transition: all 0.5s;}
+		#settings h2	{margin: 0; height: 20px; line-height: 20px; font-size: 16px; text-align: center; cursor: pointer;}
+		#settings p		{margin: 5px auto;}
+		#settings [type=range]	{width: 250px;}
+		#reset					{text-align: center;}
+		/* Settings toggle */
+			#sidebar.active article		{bottom: 269px;}
+			#sidebar.active #settings	{height: 258px;}
+		/* Article parts */
+			.image img		{max-width: 400px;}
+			.address .gmap	{height: 300px;}
+			.common_foot li	{font-weight: bold; cursor: pointer;}
+			.common_foot li:hover	{text-decoration: underline;}
+/* Tooltips */
+	#tooltip {position: absolute; width: 400px; height: 30px; line-height: 30px; color: #FFFFFF; margin: -60px 0 0 -200px; background: black; text-align: center;}
+/* Header & Footer */
+	header {z-index: 100; position: fixed; top: 0; left: 460px; right: 5px; text-align: center; font-style: italic; color: #666666; text-shadow: 1px 1px 0px #FFFFFF;}

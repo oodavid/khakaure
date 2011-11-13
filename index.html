@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kha-Kau-Re - Culture Hack</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="stylesheet" href="/css/reset.css" />
+	<link rel="stylesheet" href="/css/text.css" />
+	<link rel="stylesheet" href="/css/960.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<script src="/js/jquery-1.6.2.min.js"></script>
+	<script src="/js/jquery.tmpl.min.js"></script>
+	<script src="/js/raphael-min.js"></script>
+	<script src="/js/script.js"></script>
+	<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+</head>
+<body>
+	
+	<!-- Header -->
+	<header></header>
+
+	<!-- Nav - the canvas -->
+	<nav>
+		<div id="layer1"></div>
+		<div id="layer2"></div>
+		<div id="layer3"></div>
+	</nav>
+	
+	<!-- Sidebar -->
+	<div id="sidebar">
+		<!-- Item info is loaded here here -->
+		<article></article>
+		<!-- Page settings -->
+		<div id="settings">
+			<h2>settings and whatnot</h2>
+			<p><input id="sprlen"   value="111"  type="range" min="10"      max="200" /> spring length</p>
+			<p><input id="hooke"    value="0.70" type="range" min="0.001"   max="0.1" step="0.0001" /> hooke force</p>
+			<p><input id="friction" value="0.87" type="range" min="0.8"     max="1"   step="0.0001"/> friction coef.</p>
+			<p><input id="coulomb"  value="3000" type="range" min="0"       max="10000" /> coulomb constant</p>
+			<p><input id="charge1"  value="1"    type="range" min="0.00001" max="30"  step="0.0001"/> wee particle charge</p>
+			<p><input id="charge2"  value="23"   type="range" min="0.00001" max="30"  step="0.0001"/> daddy particle charge</p>
+			<p id="reset">
+				<button id="resetsettings">reset physics settings</button>
+				<button id="tidymap">running slow? click me</button>
+			</p>
+		</div>
+	</div>
+	
+	<!-- TEMPLATE - common_head -->
+	<script id="common_head" type="text/x-jquery-tmpl">		
+		<div class="common_head">
+			<h1>Culture Hack North</h1>
+			<p><img src="http://www.culturehacknorth.co.uk/images/CHN-300w.png" width="300" height="101" /></p>
+		</div>
+	</script>
+	
+	<!-- TEMPLATE - common_foot -->
+	<script id="common_foot" type="text/x-jquery-tmpl">
+		<h2>From here...</h2>
+		<div class="common_foot">
+			<ul></ul>
+		</div>
+	</script>
+	
+	<!-- TEMPLATE - intro -->
+	<script id="intro" type="text/x-jquery-tmpl">		
+		<div class="intro">
+			<h2>Kha·Kau·Re</h2>
+			<p><em>&quot;kha·kau·re&quot;</em> was made during <a href="http://culturehacknorth.co.uk/">culture hack north</a> <a href="http://culturehacknorth.co.uk/">culture hack north</a> by <a href="http://oodavid.com">oodavid</a> and chums for the exploration of cultural data. I am currently wading through some of the collections to pull out more useful information such as imagery, maps and whatnot.</p>
+			<p>Click an item on the right to see what is hidden beneath; as each collection has a differing range of values (titles, descriptions, archive, screen, rating, date, author, director, lead actor etc etc etc) this section on the left tries to best guess what the data means and (hopefully) displays it in a decent format, hurray!	</p>
+			<p>The visualisation is a &quot;force-directed graph&quot; and it took me some time to configure appealing settings to apply to it; time-consuming maybe but also rather fun, which is why you can play with the settings below. Awesome times.</p>
+			<p>
+				<img src="http://oodavid.com/gfx/me.jpg" width="140" height="140">
+				<em>Kind Regards, David &quot;oodavid&quot; King</em>
+			</p>
+		</div>
+	</script>
+	
+	<!-- TEMPLATE - title -->
+	<script id="title" type="text/x-jquery-tmpl">		
+		<div class="title">
+			<h1>${val}</h1>
+		</div>
+	</script>
+	
+	<!-- TEMPLATE - default -->
+	<script id="default" type="text/x-jquery-tmpl">		
+		<div class="default">
+			<p>${key}: ${val}</p>
+		</div>
+	</script>
+	
+	<!-- TEMPLATE - address -->
+	<script id="address" type="text/x-jquery-tmpl">		
+		<div class="address">
+			<p>${val}</p>
+			<div class="gmap"></div>
+		</div>
+	</script>
+	
+	<!-- TEMPLATE - image -->
+	<script id="image" type="text/x-jquery-tmpl">		
+		<div class="image">
+			<p><img src="${val}" /></p>
+		</div>
+	</script>
+	
+	<!-- TEMPLATE - description -->
+	<script id="description" type="text/x-jquery-tmpl">		
+		<div class="description">
+			<p>${val}</p>
+		</div>
+	</script>
+	
+	<!-- TEMPLATE - html -->
+	<script id="html" type="text/x-jquery-tmpl">		
+		<div class="html">
+			{{html val}}
+		</div>
+	</script>
+	
+	<!-- Analyze -->
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-24181653-5']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>	
+</body>
+</html>

@@ -1,0 +1,11 @@
+== Alistair ==
+
+	Give central mode a heartbeat (can ripple out with springlength?)
+	
+== Me ==
+	
+	What can it analyse?
+		Wikipedia
+		Twitter
+		Facebook
+	#hashable urls
